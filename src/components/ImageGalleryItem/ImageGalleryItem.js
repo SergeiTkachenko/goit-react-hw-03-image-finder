@@ -20,7 +20,7 @@ export class ImageGalleryItem extends Component {
 
     return (
       <ImageGalleryItemStyle onClick={this.toggleModal}>
-        <img src={webformatURL} alt={tags} />
+        <img style={{ height: 260 }} src={webformatURL} alt={tags} />
         {showModal && (
           <Modal alt={tags} src={largeImageURL} onClose={this.toggleModal} />
         )}
