@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { toast } from 'react-hot-toast';
 import { ImageGalleryStyle } from './ImageGallery.styled';
@@ -69,17 +69,22 @@ export class ImageGallery extends Component {
   };
 
   render() {
-    const images = this.state.images;
     const loadMore = this.loadMore;
     return (
       <>
-        {' '}
         <ImageGalleryStyle>
           {this.state.loading && <Loader></Loader>}
-          <ImageGalleryItem images={images} />
+
+          {this.state.images.map(img => {
+            return <ImageGalleryItem key={img.id} img={img} />;
+          })}
         </ImageGalleryStyle>
         {this.state.showButton && <Button loadMore={loadMore} />}
       </>
     );
   }
 }
+
+ImageGallery.propTypes = {
+  value: PropTypes.any.isRequired,
+};

@@ -29,23 +29,4 @@ img {
   height: auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-p {
-    padding: 0;
-    margin: 0;
-}
-
-h1, h2, h3 {
-  margin: 5px;
-}
 `;

@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { RotatingLines } from 'react-loader-spinner';
 
 export const Loader = () => {

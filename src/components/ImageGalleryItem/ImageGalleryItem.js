@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Modal } from '../Modal/Modal';
 import { Component } from 'react';
 import { ImageGalleryItemStyle } from './ImageGalleryItem.styled';
@@ -16,23 +16,19 @@ export class ImageGalleryItem extends Component {
 
   render() {
     const { showModal } = this.state;
-    const { images } = this.props;
+    const { webformatURL, tags, largeImageURL } = this.props.img;
+
     return (
-      images &&
-      images.map(el => {
-        return (
-          <ImageGalleryItemStyle key={el.id}>
-            <img src={el.webformatURL} alt={el.tags} />
-            {showModal && (
-              <Modal
-                alt={el.tags}
-                src={el.largeImageURL}
-                onClose={this.toggleModal}
-              />
-            )}
-          </ImageGalleryItemStyle>
-        );
-      })
+      <ImageGalleryItemStyle onClick={this.toggleModal}>
+        <img src={webformatURL} alt={tags} />
+        {showModal && (
+          <Modal alt={tags} src={largeImageURL} onClose={this.toggleModal} />
+        )}
+      </ImageGalleryItemStyle>
     );
   }
 }
+
+ImageGalleryItem.propTypes = {
+  img: PropTypes.object.isRequired,
+};
