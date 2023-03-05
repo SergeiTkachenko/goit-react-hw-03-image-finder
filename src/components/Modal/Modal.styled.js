@@ -18,7 +18,7 @@ export const ModalStyle = styled.div`
   max-height: calc(100vh - 24px);
 
   img {
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 `;
